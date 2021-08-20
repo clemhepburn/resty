@@ -24,6 +24,24 @@ const Fetch = ({ url, method, body, onChange, onSubmit }) => {
         <input type="radio" id="patch" name="method" value="PATCH" method={method} onChange={onChange} />
         <span>PATCH</span>
       </label>
+
+      <button type="submit">
+        <span>Submit</span>
+      </button>
+    </form>
+
+    <form>
+      <textarea id="body" placeholder="Raw JSON Body" type="text" name="body" value={body} onChange={onChange} />
     </form>
   </div>
-}
+};
+
+Fetch.propTypes = {
+  url: PropTypes.string.isRequired,
+  method: PropTypes.string.isRequired,
+  body: PropTypes.any,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func
+};
+
+export default Fetch;
