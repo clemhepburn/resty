@@ -44,4 +44,18 @@ export default class ReposanteContainer extends Component {
     });
   }
 
+  render() {
+    const { url, body, method, response, history } = this.state;
+    return (
+      <div>
+        <section>header</section>
+        <section className="body-content-section">
+          <section className="fetch-content">
+            <Fetch url={url} body={body} method={method} response={response} history={history} />
+          </section>
+        </section>
+      </div>
+    )
+  }
+
 }
