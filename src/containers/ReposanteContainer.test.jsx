@@ -31,12 +31,17 @@ describe('container', () => {
     expect(radioSelection).toBeChecked('GET');
 
     const textarea = await screen.findByPlaceholderText('Raw JSON Body');
-    userEvent.type(textarea, {
+    fireEvent.change(textarea, {
       target: {
-        value: '{rose: is a rose is a rose is a rose}'
+        value: ''
       }
     });
-    expect(textarea.value).toBe('{rose: is a rose is a rose is a rose}')
+    expect(textarea.value).toBe('')
 
+
+    const button = await screen.findByTestId('button');
+    const response = await screen.findAllByTestId('response');
+    userEvent.click(button);
+    expect(response).not.toBeEmptyDOMElement;
   });
 });

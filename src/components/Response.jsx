@@ -4,7 +4,7 @@ import ReactJson from 'react-json-view';
 
 const Response = ({ response }) => {
   return (
-    <div className="response">
+    <div data-testid="response" className="response">
       <ReactJson src={response} />
     </div>
   )
