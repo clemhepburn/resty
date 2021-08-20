@@ -52,32 +52,32 @@ const Fetch = ({ url, method, body, onChange, onSubmit }) => {
       <div className="url-box">
         <label htmlFor="url">
           <span>URL:</span>
-          <input className={classes.urlBox} type="url" name="url" value={url} placeholder="URL" onChange={onChange} />
+          <input className={classes.urlBox} data-testid="url" type="url" name="url" value={url} placeholder="URL" onChange={onChange} />
         </label>
       </div>
       <div className={classes.radios}>
         <label htmlFor="get">
-          <input type="radio" id="get" name="method" value="GET" method={method} onChange={onChange} />
+          <input type="radio" name="get" data-testid="get" name="method" value="GET" method={method} onChange={onChange} />
           <span>GET</span>
         </label>
         <label htmlFor="post">
-          <input type="radio" id="post" name="method" value="POST" method={method} onChange={onChange} />
+          <input type="radio" name="post" data-testid="post" name="method" value="POST" method={method} onChange={onChange} />
           <span>POST</span>
         </label>
         <label htmlFor="put">
-          <input type="radio" id="put" name="method" value="PUT" method={method} onChange={onChange} />
+          <input type="radio" name="put" data-testid="put" name="method" value="PUT" method={method} onChange={onChange} />
           <span>PUT</span>
         </label>
         <label htmlFor="delete">
-          <input type="radio" id="delete" name="method" value="DELETE" method={method} onChange={onChange} />
+          <input type="radio" name="delete" data-testid="delete" name="method" value="DELETE" method={method} onChange={onChange} />
           <span>DELETE</span>
         </label>
         <label htmlFor="patch">
-          <input type="radio" id="patch" name="method" value="PATCH" method={method} onChange={onChange} />
+          <input type="radio" name="patch" data-testid="patch" name="method" value="PATCH" method={method} onChange={onChange} />
           <span>PATCH</span>
         </label>
 
-        <button type="submit">
+        <button data-testid="button" type="submit">
           Soumettre
         </button>
       </div>
