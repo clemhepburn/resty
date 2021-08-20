@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Fetch = ({ url, method, body, onChange, onSubmit }) => {
   return <div className="fetch">
     <form onSubmit={onSubmit}>
-      <div class="url-box">
+      <div className="url-box">
         <label htmlFor="url">
           <span>URL:</span>
           <input type="url" name="url" value={url} placeholder="URL" onChange={onChange} />

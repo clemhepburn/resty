@@ -28,8 +28,9 @@ export default class ReposanteContainer extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { url, body, method } = this.state;
-    const response = await fetchService(url, body, method);
+    const { url, method, body } = this.state;
+    console.log(url, body, method);
+    const response = await fetchService(url, method, body);
     const localHistory = JSON.parse(localStorage.getItem('HISTORY') || '[]');
     localStorage.setItem('HISTORY', JSON.stringify([...localHistory, { method, url }]));
     const storedHistory = JSON.parse(localStorage.getItem('HISTORY') || '[]');
@@ -53,7 +54,7 @@ export default class ReposanteContainer extends Component {
         <section><Header /></section>
         <section className="body-content-section">
           <section className="fetch-content">
-            <Fetch url={url} body={body} method={method} response={response} history={history} />
+            <Fetch url={url} body={body} method={method} response={response} history={history} onChange={this.handleChange} onSubmit={this.handleSubmit} />
           </section>
           <section className="response-display">
             <Response response={response} />

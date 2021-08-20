@@ -1,5 +1,3 @@
-import { string } from "prop-types";
-
 export function getMethod() {
   const stringMethod = localStorage.getItem('METHOD');
   if (!stringMethod) return [];
