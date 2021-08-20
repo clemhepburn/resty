@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Fetch from '../components/Fetch';
 import Header from '../components/Header';
+import Response from '../components/Response';
 import { fetchService } from '../services/fetchService';
 
 export default class ReposanteContainer extends Component {
@@ -53,6 +54,9 @@ export default class ReposanteContainer extends Component {
         <section className="body-content-section">
           <section className="fetch-content">
             <Fetch url={url} body={body} method={method} response={response} history={history} />
+          </section>
+          <section className="response-display">
+            <Response response={response} />
           </section>
         </section>
       </div>

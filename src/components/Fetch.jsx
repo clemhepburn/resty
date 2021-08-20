@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 const Fetch = ({ url, method, body, onChange, onSubmit }) => {
   return <div className="fetch">
     <form onSubmit={onSubmit}>
+      <div class="url-box">
+        <label htmlFor="url">
+          <span>URL:</span>
+          <input type="url" name="url" value={url} placeholder="URL" onChange={onChange} />
+        </label>
+      </div>
       <label htmlFor="get">
         <input type="radio" id="get" name="method" value="GET" method={method} onChange={onChange} />
         <span>GET</span>
@@ -26,7 +32,7 @@ const Fetch = ({ url, method, body, onChange, onSubmit }) => {
       </label>
 
       <button type="submit">
-        <span>Submit</span>
+        <span>Soumettre</span>
       </button>
     </form>
 
