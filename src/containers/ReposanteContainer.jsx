@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fetch from '../components/Fetch';
+import Header from '../components/Header';
 import { fetchService } from '../services/fetchService';
 
 export default class ReposanteContainer extends Component {
@@ -48,7 +49,7 @@ export default class ReposanteContainer extends Component {
     const { url, body, method, response, history } = this.state;
     return (
       <div>
-        <section>header</section>
+        <section><Header /></section>
         <section className="body-content-section">
           <section className="fetch-content">
             <Fetch url={url} body={body} method={method} response={response} history={history} />
