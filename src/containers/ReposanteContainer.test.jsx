@@ -19,5 +19,18 @@ describe('container', () => {
       }
     })
     expect(urlInput.value).toBe('https://ac-vill.herokuapp.com/villagers')
-  })
-})
+
+
+    const radioSelection = await screen.findByTestId('get');
+    userEvent.click(radioSelection);
+    fireEvent.change(radioSelection, {
+      target: {
+        value: 'GET'
+      }
+    });
+    expect(radioSelection).toBeChecked('GET')
+
+
+
+  });
+});
