@@ -29,3 +29,19 @@ export function getUrl() {
   const parsedUrl = JSON.parse(stringUrl);
   return parsedUrl;
 }
+
+export function setUrl(parsedUrl) {
+  const locations = localStorage.getItem('URL');
+  let urlContent;
+
+  if (locations) {
+    const currentData = JSON.parse(locations);
+    urlContent = currentData;
+  } else {
+    urlContent = [];
+  }
+
+  urlContent.push(parsedUrl);
+  const updatedData = JSON.stringify(urlContent);
+  localStorage.setItem(updatedData);
+}
