@@ -38,4 +38,10 @@ export default class ReposanteContainer extends Component {
     });
   }
 
+  handleChange = ({ target }) => {
+    this.setState({
+      [target.name]: target.value,
+    });
+  }
+
 }
