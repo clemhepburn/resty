@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Fetch from '../components/Fetch';
-import Header from '../components/Header';
 import Response from '../components/Response';
 import Sidebar from '../components/Sidebar';
 import { fetchService } from '../services/fetchService';
+import styles from './ReposanteContainer.css';
+
 
 export default class ReposanteContainer extends Component {
 
@@ -51,10 +52,10 @@ export default class ReposanteContainer extends Component {
   render() {
     const { url, body, method, response, history } = this.state;
     return (
-      <div>
-        <section><Header /></section>
-        <section className="body-content-section">
-          <section className="sidebar-section"><Sidebar history={history} /></section>
+
+      <div className={styles.container}>
+        <section className="sidebar-section"><Sidebar history={history} /></section>
+        <section>
           <section className="fetch-content">
             <Fetch url={url} body={body} method={method} response={response} history={history} onChange={this.handleChange} onSubmit={this.handleSubmit} />
           </section>
