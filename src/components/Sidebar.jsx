@@ -27,7 +27,7 @@ const Sidebar = ({ history }) => {
   });
 
   return (
-    <div className={classes.sidebar}>
+    <div data-testid="sidebar" className={classes.sidebar}>
       <h4 className={classes.h4}>Récupérations récentes:</h4>
       <ul className={classes.ul}>
         {sidebarElements}

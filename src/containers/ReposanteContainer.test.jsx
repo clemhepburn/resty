@@ -43,5 +43,8 @@ describe('container', () => {
     const response = await screen.findAllByTestId('response');
     userEvent.click(button);
     expect(response).not.toBeEmptyDOMElement;
+
+    const sidebar = await screen.findByTestId('sidebar');
+    expect(sidebar).not.toBeEmptyDOMElement();
   });
 });
