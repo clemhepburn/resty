@@ -1,13 +1,15 @@
 import React from 'react';
-import SidebarItem from './SidebarItem';
+import SidebarItem from './SidebarItem.jsx';
 
-const SideBar = ({ history }) => {
+const Sidebar = ({ history }) => {
   const sidebarElements = history.map((h, i) => {
     return (
       <li key={i}>
-        <SidebarItem {...h} />
+        <SidebarItem
+          {...h}
+        />
       </li>
-    )
+    );
   });
 
   return (
