@@ -84,7 +84,7 @@ const Fetch = ({ url, method, body, onChange, onSubmit }) => {
     </form>
 
     <form>
-      <textarea className={classes.textarea} id="body" placeholder="Raw JSON Body" type="text" name="body" value={body} onChange={onChange} />
+      <textarea className={classes.textarea} data-testid="textarea" placeholder="Raw JSON Body" type="text" name="textarea" value={body} onChange={onChange} />
     </form>
   </div>
 };

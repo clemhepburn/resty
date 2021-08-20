@@ -18,7 +18,7 @@ describe('container', () => {
         value: 'https://ac-vill.herokuapp.com/villagers'
       }
     })
-    expect(urlInput.value).toBe('https://ac-vill.herokuapp.com/villagers')
+    expect(urlInput.value).toBe('https://ac-vill.herokuapp.com/villagers');
 
 
     const radioSelection = await screen.findByTestId('get');
@@ -28,9 +28,15 @@ describe('container', () => {
         value: 'GET'
       }
     });
-    expect(radioSelection).toBeChecked('GET')
+    expect(radioSelection).toBeChecked('GET');
 
-
+    const textarea = await screen.findByPlaceholderText('Raw JSON Body');
+    userEvent.type(textarea, {
+      target: {
+        value: '{rose: is a rose is a rose is a rose}'
+      }
+    });
+    expect(textarea.value).toBe('{rose: is a rose is a rose is a rose}')
 
   });
 });
